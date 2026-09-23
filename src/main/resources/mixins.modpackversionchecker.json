@@ -8,6 +8,8 @@
     "FMLHandshakeServerStateMixin",
     "FMLModContainerAccessor"
   ],
-  "client": [],
+  "client": [
+    "FMLClientHandlerMixin"
+  ],
   "server": []
 }

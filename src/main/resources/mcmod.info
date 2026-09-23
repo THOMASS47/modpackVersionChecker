@@ -3,7 +3,7 @@
 	"modList": [{
 		"modid": "${modId}",
 		"name": "${modName}",
-		"description": "Shows a clear, configurable message when a player's modpack version does not match the server.",
+		"description": "Warns players before connecting when their modpack version does not match the server.",
 		"version": "${modVersion}",
 		"mcversion": "${minecraftVersion}",
 		"url": "",

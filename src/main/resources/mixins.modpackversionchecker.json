@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "com.modpackversionchecker.mixin",
+  "refmap": "mixins.modpackversionchecker.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "FMLHandshakeServerStateMixin",
+    "FMLModContainerAccessor"
+  ],
+  "client": [],
+  "server": []
+}

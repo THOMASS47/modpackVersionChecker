@@ -7,7 +7,7 @@ import net.minecraftforge.common.config.Configuration;
 public final class Config {
 
     public static String modpackVersion = "1.0.0";
-    public static String rejectionMessage = "Your modpack is out of date.\nRequired version: {serverVersion}\nYour version: {clientVersion}";
+    public static String rejectionMessage = "Your modpack is out of date.\\nRequired version: {serverVersion}\\nYour version: {clientVersion}";
 
     private Config() {}
 

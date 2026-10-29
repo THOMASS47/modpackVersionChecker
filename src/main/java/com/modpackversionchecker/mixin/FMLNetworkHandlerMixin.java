@@ -1,7 +1,5 @@
 package com.modpackversionchecker.mixin;
 
-import net.minecraft.util.EnumChatFormatting;
-
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -23,9 +21,12 @@ public abstract class FMLNetworkHandlerMixin {
 
     @Inject(method = "enhanceStatusQuery(Lcom/google/gson/JsonObject;)V", at = @At("RETURN"))
     private static void modpackVersionChecker$advertiseVersion(JsonObject response, CallbackInfo callback) {
-        for (JsonElement entry : response.getAsJsonObject("modinfo").getAsJsonArray("modList")) {
+        for (JsonElement entry : response.getAsJsonObject("modinfo")
+            .getAsJsonArray("modList")) {
             JsonObject mod = entry.getAsJsonObject();
-            if (mod.get("modid").getAsString().equals(ModpackVersionChecker.MODID)) {
+            if (mod.get("modid")
+                .getAsString()
+                .equals(ModpackVersionChecker.MODID)) {
                 mod.addProperty("version", Config.modpackVersion);
                 return;
             }

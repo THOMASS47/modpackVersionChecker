@@ -5,8 +5,8 @@
   "refmap": "mixins.modpackversionchecker.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "FMLHandshakeServerStateMixin",
-    "FMLModContainerAccessor"
+    "FMLHandshakeModListMixin",
+    "FMLNetworkHandlerMixin"
   ],
   "client": [
     "FMLClientHandlerMixin"

@@ -6,7 +6,7 @@ Modpack Version Checker is a small Minecraft Forge 1.7.10 mod that gives modpack
 
 The server advertises its configured pack version through Forge's existing server-list status response. A client with the mod compares that version with its own configuration, changes Forge's compatibility indicator to a red X when they differ, and displays both versions in the tooltip. Attempting to connect opens a warning screen before Forge starts the login process.
 
-Server owners can also choose whether mismatched or unknown client versions should be rejected during the Forge handshake.
+The configured pack version is also advertised through Forge's normal handshake mod list. Server owners can choose whether mismatched or unknown client versions should be rejected during the Forge handshake. Matching versions still go through Forge's normal mod compatibility checks.
 
 ## Features
 
@@ -45,7 +45,7 @@ general {
 }
 ```
 
-`version` is the modpack version to compare. It can use any value your pack release process uses, provided matching clients and servers use the same string.
+`version` is the modpack version to compare. It can use any non-empty value your pack release process uses, provided matching clients and servers use the same string. Leading and trailing whitespace is trimmed; an empty value prevents startup.
 
 `kickOnVersionMismatch` is only meaningful on the server:
 

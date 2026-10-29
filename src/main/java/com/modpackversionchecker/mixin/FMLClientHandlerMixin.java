@@ -11,7 +11,6 @@ import net.minecraft.util.EnumChatFormatting;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -21,6 +20,7 @@ import com.modpackversionchecker.ClientConnectionWarning;
 import com.modpackversionchecker.Config;
 import com.modpackversionchecker.GuiVersionMismatch;
 import com.modpackversionchecker.ModpackVersionChecker;
+import com.modpackversionchecker.VersionCheck;
 
 import cpw.mods.fml.client.ExtendedServerListData;
 import cpw.mods.fml.client.FMLClientHandler;
@@ -35,7 +35,7 @@ public abstract class FMLClientHandlerMixin {
     private void modpackVersionChecker$markMismatchedServer(ServerData server, ServerStatusResponse response,
         CallbackInfo callback) {
         ExtendedServerListData serverData = serverDataTag.get(server);
-        if (modpackVersionChecker$getMismatchedVersion(serverData) == null) {
+        if (serverData == null || VersionCheck.mismatch(serverData.modData.get(ModpackVersionChecker.MODID)) == null) {
             return;
         }
 
@@ -50,7 +50,12 @@ public abstract class FMLClientHandlerMixin {
             return;
         }
 
-        String serverVersion = modpackVersionChecker$getMismatchedVersion(serverDataTag.get(server));
+        ExtendedServerListData serverData = serverDataTag.get(server);
+        if (serverData == null) {
+            return;
+        }
+
+        String serverVersion = VersionCheck.mismatch(serverData.modData.get(ModpackVersionChecker.MODID));
         if (serverVersion != null) {
             callback.setReturnValue(
                 EnumChatFormatting.RED + "Modpack version mismatch\n"
@@ -74,7 +79,12 @@ public abstract class FMLClientHandlerMixin {
             return;
         }
 
-        String serverVersion = modpackVersionChecker$getMismatchedVersion(serverDataTag.get(server));
+        ExtendedServerListData serverData = serverDataTag.get(server);
+        if (serverData == null) {
+            return;
+        }
+
+        String serverVersion = VersionCheck.mismatch(serverData.modData.get(ModpackVersionChecker.MODID));
         if (serverVersion == null) {
             return;
         }
@@ -82,18 +92,5 @@ public abstract class FMLClientHandlerMixin {
         Minecraft.getMinecraft()
             .displayGuiScreen(new GuiVersionMismatch(parent, server, serverVersion));
         callback.cancel();
-    }
-
-    @Unique
-    private static String modpackVersionChecker$getMismatchedVersion(ExtendedServerListData serverData) {
-        if (serverData == null) {
-            return null;
-        }
-
-        String serverVersion = serverData.modData.get(ModpackVersionChecker.MODID);
-        if (serverVersion == null || serverVersion.isEmpty()) {
-            return "unknown";
-        }
-        return Config.modpackVersion.equals(serverVersion) ? null : serverVersion;
     }
 }

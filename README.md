@@ -6,7 +6,13 @@ A **Forge 1.7.10** mod that checks whether a player's modpack version matches th
 
 Mismatched versions show the red X in the server list and a warning before joining.
 
-Servers reject mismatched or missing versions by default.
+Servers can also be configured to reject mismatched or missing versions which is enabled do by default.
+
+## Screenshots
+
+| Server list | Join warning | Connection rejected |
+| --- | --- | --- |
+| [<img src="docs/screenshots/server-list.png" width="260" alt="Server list version mismatch">](docs/screenshots/server-list.png) | [<img src="docs/screenshots/join-warning.png" width="260" alt="Warning before joining">](docs/screenshots/join-warning.png) | [<img src="docs/screenshots/connection-rejected.png" width="260" alt="Connection rejected for a version mismatch">](docs/screenshots/connection-rejected.png) |
 
 ## Setup
 

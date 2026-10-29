@@ -51,16 +51,6 @@ public abstract class FMLNetworkHandlerMixin {
 
         ModpackVersionChecker.LOG
             .info("Rejecting client with modpack version '{}' (required '{}')", clientVersion, Config.modpackVersion);
-        callback.setReturnValue(
-            EnumChatFormatting.RED + "Modpack version mismatch\n\n"
-                + EnumChatFormatting.WHITE
-                + "This server uses version "
-                + EnumChatFormatting.YELLOW
-                + Config.modpackVersion
-                + EnumChatFormatting.WHITE
-                + "\nYour client uses version "
-                + EnumChatFormatting.YELLOW
-                + clientVersion
-                + EnumChatFormatting.WHITE);
+        callback.setReturnValue(VersionCheck.mismatchMessage(clientVersion, Config.modpackVersion));
     }
 }

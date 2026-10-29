@@ -57,18 +57,7 @@ public abstract class FMLClientHandlerMixin {
 
         String serverVersion = VersionCheck.mismatch(serverData.modData.get(ModpackVersionChecker.MODID));
         if (serverVersion != null) {
-            callback.setReturnValue(
-                EnumChatFormatting.RED + "Modpack version mismatch\n"
-                    + EnumChatFormatting.WHITE
-                    + "This server uses version "
-                    + EnumChatFormatting.YELLOW
-                    + serverVersion
-                    + EnumChatFormatting.WHITE
-                    + ".\nYour client uses version "
-                    + EnumChatFormatting.YELLOW
-                    + Config.modpackVersion
-                    + EnumChatFormatting.WHITE
-                    + ".");
+            callback.setReturnValue(VersionCheck.mismatchMessage(Config.modpackVersion, serverVersion));
         }
     }
 

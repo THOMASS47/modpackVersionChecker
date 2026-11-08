@@ -1,4 +1,4 @@
-package com.modpackversionchecker.mixin;
+package com.thomass47.modpackversionchecker.mixin;
 
 import java.util.Map;
 
@@ -15,11 +15,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import com.modpackversionchecker.ClientConnectionWarning;
-import com.modpackversionchecker.Config;
-import com.modpackversionchecker.GuiVersionMismatch;
-import com.modpackversionchecker.ModpackVersionChecker;
-import com.modpackversionchecker.VersionCheck;
+import com.thomass47.modpackversionchecker.ClientConnectionWarning;
+import com.thomass47.modpackversionchecker.Config;
+import com.thomass47.modpackversionchecker.GuiVersionMismatch;
+import com.thomass47.modpackversionchecker.ModpackVersionChecker;
+import com.thomass47.modpackversionchecker.VersionCheck;
 
 import cpw.mods.fml.client.ExtendedServerListData;
 import cpw.mods.fml.client.FMLClientHandler;

@@ -1,4 +1,4 @@
-package com.modpackversionchecker;
+package com.thomass47.modpackversionchecker;
 
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.multiplayer.ServerData;

@@ -1,4 +1,4 @@
-package com.modpackversionchecker;
+package com.thomass47.modpackversionchecker;
 
 import java.io.File;
 

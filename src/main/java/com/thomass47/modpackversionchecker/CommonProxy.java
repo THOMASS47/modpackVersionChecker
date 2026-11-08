@@ -1,4 +1,4 @@
-package com.modpackversionchecker;
+package com.thomass47.modpackversionchecker;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;

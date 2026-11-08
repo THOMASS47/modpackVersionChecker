@@ -1,4 +1,4 @@
-package com.modpackversionchecker.mixin;
+package com.thomass47.modpackversionchecker.mixin;
 
 import java.util.List;
 import java.util.Map;
@@ -9,8 +9,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import com.modpackversionchecker.Config;
-import com.modpackversionchecker.ModpackVersionChecker;
+import com.thomass47.modpackversionchecker.Config;
+import com.thomass47.modpackversionchecker.ModpackVersionChecker;
 
 import cpw.mods.fml.common.ModContainer;
 import cpw.mods.fml.common.network.handshake.FMLHandshakeMessage;

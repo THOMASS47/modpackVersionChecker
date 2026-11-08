@@ -1,4 +1,4 @@
-package com.modpackversionchecker.mixin;
+package com.thomass47.modpackversionchecker.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -8,9 +8,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.modpackversionchecker.Config;
-import com.modpackversionchecker.ModpackVersionChecker;
-import com.modpackversionchecker.VersionCheck;
+import com.thomass47.modpackversionchecker.Config;
+import com.thomass47.modpackversionchecker.ModpackVersionChecker;
+import com.thomass47.modpackversionchecker.VersionCheck;
 
 import cpw.mods.fml.common.network.handshake.FMLHandshakeMessage;
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;

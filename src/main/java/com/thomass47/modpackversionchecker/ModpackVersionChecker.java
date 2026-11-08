@@ -1,4 +1,4 @@
-package com.modpackversionchecker;
+package com.thomass47.modpackversionchecker;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,8 +20,8 @@ public class ModpackVersionChecker {
     public static final Logger LOG = LogManager.getLogger(MODID);
 
     @SidedProxy(
-        clientSide = "com.modpackversionchecker.ClientProxy",
-        serverSide = "com.modpackversionchecker.CommonProxy")
+        clientSide = "com.thomass47.modpackversionchecker.ClientProxy",
+        serverSide = "com.thomass47.modpackversionchecker.CommonProxy")
     public static CommonProxy proxy;
 
     @Mod.EventHandler

@@ -2,11 +2,11 @@
 
 [![Build and test](https://github.com/THOMASS47/modpackVersionChecker/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/THOMASS47/modpackVersionChecker/actions/workflows/build-and-test.yml)
 
-A **Forge 1.7.10** mod that checks whether a player's modpack version matches the server's.
+A **Forge 1.7.10** mod that warns/kicks players connecting with the wrong modpack version.
 
 Mismatched versions show the red X in the server list and a warning before joining.
 
-Servers can also be configured to reject mismatched or missing versions which is enabled do by default.
+Servers can be configured to reject mismatched or missing versions, which is enabled by default.
 
 ## Screenshots
 
@@ -17,7 +17,7 @@ Servers can also be configured to reject mismatched or missing versions which is
 ## Setup
 
 1. Download a JAR from [Releases](https://github.com/THOMASS47/modpackVersionChecker/releases).
-2. Put it in the client and server `mods` folders.
+2. Put it and [UniMixins](https://modrinth.com/mod/unimixins) (the `-all` JAR) in the client and server `mods` folders.
 3. Launch each once to generate `config/modpackversionchecker.cfg`.
 4. Set the same pack version on both sides, then restart. Include the client config with your modpack.
 

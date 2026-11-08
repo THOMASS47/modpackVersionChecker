@@ -12,6 +12,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
     modid = ModpackVersionChecker.MODID,
     version = Tags.VERSION,
     name = "Modpack Version Checker",
+    dependencies = "required-after:unimixins-mixin",
     acceptedMinecraftVersions = "[1.7.10]",
     acceptableRemoteVersions = "*")
 public class ModpackVersionChecker {

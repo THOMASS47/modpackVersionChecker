@@ -1,6 +1,7 @@
 # Modpack Version Checker
 
 [![Build and test](https://github.com/THOMASS47/modpackVersionChecker/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/THOMASS47/modpackVersionChecker/actions/workflows/build-and-test.yml)
+[Modrinth page](https://modrinth.com/project/modpack-version-checker)
 
 A **Forge 1.7.10** mod that warns/kicks players connecting with the wrong modpack version.
 
